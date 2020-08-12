@@ -1,0 +1,34 @@
+
+<div @dropbox class="outer">
+  <div  class="inner">
+    <form  class="example-form" (ngSubmit)="loginForm.valid && loginFunc(loginForm.value)" #loginForm='ngForm'>
+      <div class="example-form" style="color: white; background-color: #f44336; border-radius: 0px 0px 20px 20px;">
+        <h1 class="example-full-width" style="text-align: center;" >Sign in to continue</h1>
+      </div>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Enter Your UserName</mat-label>
+        <!-- <span *ngIf="loginForm.submitted && loginForm.controls.username.errors?.required" style='color:red'> please Enter the Your UserName </span> -->
+        <input matInput placeholder="USERNAME"  name="username" class="inptxt" ngModel required>
+        <mat-error *ngIf='loginForm.submitted && loginForm.controls.username.errors?.required'>
+          please Enter the Your UserName
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Enter Your Password</mat-label>
+        <input matInput placeholder="PASSWORD"  name="password" ngModel required>
+        <mat-error *ngIf='loginForm.submitted && loginForm.controls.username.errors?.required'>
+          please Enter the Your UserName
+        </mat-error>
+      </mat-form-field>
+
+      <button  type="submit" class="example-full-width" mat-raised-button color="warn">LOGIN</button>
+
+
+      <span *ngIf="wrongPassword==true && loginForm.submitted " style='color:red'> The username or Password is incorrect </span>
+
+    </form>
+  </div>
+</div>
+

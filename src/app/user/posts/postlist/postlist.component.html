@@ -1,0 +1,36 @@
+
+
+<button class="AddIcon" matTooltip="Add Post"
+mat-fab color=''
+(click)="openAddDialog()">
+  <mat-icon class="icon">add_circle</mat-icon>
+</button>
+<mat-card class="example-card" *ngFor="let item of allData;let i=index">
+  <button class="three-dots" [matMenuTriggerFor]="menu"
+  matTooltip="more action"
+  mat-icon-button color="warn">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openEditDialog(item)">Edit</button>
+    <button mat-menu-item (click)="openDeleteDialog(i,item)">Delete</button>
+  </mat-menu>
+
+
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title style="cursor:pointer ; " matTooltip="open his account" matTooltipPosition='above' routerLink='/user/{{item.userId}}'>ESSAM ABOZAID</mat-card-title>
+    <mat-card-subtitle>Date of Post if it putted in backEnd</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content (click)='displayOnePost(item)'>
+    <p class="PostTitle">{{item.title}}</p>
+    <p>
+      {{item.body}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <!-- if back end add to object number of likes and shares -->
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

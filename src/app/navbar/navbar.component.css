@@ -1,0 +1,13 @@
+.fill-remaining-space {
+  /*This fills the remaining space, by using flexbox.
+ Every toolbar row uses a flexbox row layout. */
+ flex: 1 1 auto;
+}
+.btnLinks{
+  color: #f44336;
+}
+.active-link {
+
+  background-color:rgba(170, 170, 170,.3);
+}
+

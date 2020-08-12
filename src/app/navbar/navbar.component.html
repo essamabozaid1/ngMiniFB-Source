@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <button class="btnLinks" mat-button routerLink="/">
+    <mat-icon>online_prediction</mat-icon>{{title}}
+  </button>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span>
+
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm >
+    <button class="btnLinks" mat-button routerLink="/login" routerLinkActive="active-link" >Login</button>
+    <button class="btnLinks" mat-button routerLink="/posts/" routerLinkActive="active-link"  [routerLinkActiveOptions]="{exact:true}">News Feeds</button>
+    <button class="btnLinks" mat-button routerLink="/user/{{userID}}/posts" routerLinkActive="active-link">My Account</button>
+
+    <button class="btnLinks" mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Sign up</button>
+  </div>
+  <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+
+
+</mat-toolbar>
+
+<mat-menu x-position="before" #menu="matMenu">
+  <button class="btnLinks" mat-menu-item  routerLink="/login">Login</button>
+  <button class="btnLinks" mat-menu-item  routerLink="/user">My Account</button>
+  <button class="btnLinks" mat-menu-item  routerLink="/">Sign up</button>
+  <!--<button mat-menu-item>Help</button>-->
+</mat-menu>

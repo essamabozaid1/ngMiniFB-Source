@@ -1,0 +1,40 @@
+.example-card {
+  max-width: 400px;
+
+  margin:auto;
+  margin-bottom: 20px;
+}
+.PostTitle{
+  font-weight: bold;
+}
+.example-header-image{
+  background-image: url('../../../../assets/img/_DSC2572.jpg');
+  background-size: cover;
+}
+.three-dots{
+  float: right;
+}
+.AddIcon{
+  position: fixed;
+  right: 100px;
+  bottom: 70px;
+
+  line-height: 48px;
+  /* z-index: +1; */
+
+}
+.icon{
+  /* position: relative; */
+  height:48px !important;
+  width:48px !important;
+  font-size:72px !important;
+  margin-top: -24px;
+  margin-left: -24px;
+  color: #f44336;
+}
+
+.AddIcon ::ng-deep .mat-icon{
+
+
+
+}

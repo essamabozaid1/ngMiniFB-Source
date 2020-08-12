@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Add New Post</h1>
+<div mat-dialog-content>
+  <form class="example-form">
+    <mat-form-field class="txtarea">
+      <mat-label>Title Post</mat-label>
+      <textarea matInput cdkTextareaAutosize name="title" [(ngModel)]="newPost.title"
+        placeholder="Add Your Title Post"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="txtarea">
+      <mat-label>Your Post</mat-label>
+      <textarea matInput cdkTextareaAutosize name="body" [(ngModel)]="newPost.body"
+        placeholder="Add Your Post"></textarea>
+    </mat-form-field>
+
+  </form>
+</div>
+<div mat-dialog-actions align='end'>
+  <button mat-button cdkFocusInitial  (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="addPost()"  >Add</button>
+</div>
+
